@@ -26,5 +26,7 @@ switch n
         exit
     case 'p7'
     cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
+        case 'p52'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\p_5_2'
 end
 end
