@@ -29,9 +29,6 @@ switch n
     case 'p52'
     cd 'C:\Users\ahm_e\Documents\MATLAB\p_5_2'
     case 'genlag'
-        p = genpath('C:\Users\ahm_e\Documents\MATLAB\genlag\gatbx');
-        addpath(p);
-        clear p
     cd 'C:\Users\ahm_e\Documents\MATLAB\genlag'
 end
 end
