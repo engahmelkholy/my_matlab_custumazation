@@ -4,7 +4,7 @@ switch n
         winopen(pwd)
     case 'q'
         exit
-    case 'main'
+    case 'work'
         cd 'C:\Users\ahm_e\Documents\MATLAB'
     case 'home'
         cd 'D:\OneDrive - Fculty Of Engineering (Tanta University)\General_software\scripts\AHK'
