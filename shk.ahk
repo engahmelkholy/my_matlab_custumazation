@@ -446,7 +446,7 @@ CapsLock & f::
  Return
 }                                      
 CapsLock & r:: Run "C:\Program Files\Git\git-bash.exe"   ;|
-CapsLock & t:: Run "C:\Program Files\Notepad++\notepad++.exe"
+CapsLock & t:: Run "C:\Program Files\Sublime Text\sublime_text.exe"
 ;---------------------------------------------------------------------o
 
 
