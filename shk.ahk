@@ -348,8 +348,8 @@ return                                                               ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & .:: Send, {Del}                                           ;|
 CapsLock & /:: Send, ^{Del}                                          ;|
-CapsLock & ,:: Send, {BS}                                            ;|
-CapsLock & m:: Send, ^{BS}                                           ;|
+CapsLock & ,:: Send, ^{BS}                                             ;|
+CapsLock & m:: Send,  {BS}                                         ;|
 ;---------------------------------------------------------------------o
 
 
