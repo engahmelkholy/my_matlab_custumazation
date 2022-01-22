@@ -3,7 +3,7 @@ function go(n)
     %% go home,work,tst >> go to fixed folder ahk, matlab work dir, go test folder
     %% go to for current project it will change respectifilly
     %% "p1,wave,wavee,p7,p52,genlag"
-    %% go d, dd, ddd / go c, cc, ccc >> vairuis clearing options and cd options
+    %% go d/ go c, cc, ccc >> clearing options and cd options
 switch n
     case 'o'
     winopen(pwd)
@@ -40,29 +40,6 @@ switch n
 case 'd'
     close all
     clc
-    clear all
-case 'dd'
-    close all
-    bdclose('all')
-    clc
-    delete *.bak
-    %remove all added paths
-    restoredefaultpath;
-    p = genpath('D:\OneDrive - Fculty Of Engineering (Tanta University)\General_software\scripts\AHK');
-    addpath(p);
-    clear all
-case 'ddd'
-    close all
-    bdclose('all')
-    clc
-    clear all
-    delete *.bak
-    %remove all added paths
-    restoredefaultpath;
-    p = genpath('D:\OneDrive - Fculty Of Engineering (Tanta University)\General_software\scripts\AHK');
-    addpath(p);
-    clear all
-    go home;
 % cd option
 case 'c'
     cd ..
