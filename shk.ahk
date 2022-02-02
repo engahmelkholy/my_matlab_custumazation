@@ -344,10 +344,10 @@ return                                                               ;|
 ;                     CapsLock + ,  |  BackSpace                     ;|
 ;                     CapsLock + .  |  Ctrl + BackSpace              ;|
 ;-----------------------------------o---------------------------------o
-CapsLock & o:: Send, {Del}                                           ;|
-CapsLock & p:: Send, ^{Del}                                          ;|
-CapsLock & i:: Send, ^{BS}                                           ;|
-CapsLock & u:: Send,  {BS} 
+CapsLock & u:: Send, {Del}                                           ;|
+CapsLock & i:: Send, ^{Del}                                          ;|
+CapsLock & o:: Send, ^{BS}                                           ;|
+CapsLock & p:: Send,  {BS} 
 ;---------------------------------------------------------------------o
 
 
