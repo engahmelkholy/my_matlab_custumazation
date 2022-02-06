@@ -1,4 +1,5 @@
 function go(n)
+    %% mainaly this function is proposed the cd command 
     %% go o,q >> open, quit the matlab
     %% go home,work,tst,mtp >> go to fixed folder ahk, matlab work dir, go test folder
     %% go to for current project it will change respectifilly
@@ -29,7 +30,8 @@ switch n
         clear p
         cd 'C:\Users\ahm_e\Documents\MATLAB\WEC-Sim_Applications\Elec_wave'
     case 'p7'
-    cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
+    %cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\ga-main\gen-p1'
     case 'wveg'
     cd 'C:\Users\ahm_e\Documents\MATLAB\wave-energy-egypt'
     p = genpath('source');
@@ -55,6 +57,7 @@ switch n
     'C:\Users\ahm_e\Documents\MATLAB\matpower\mptest\lib\t', ...
     '-end' );
 
+
 % delete and quit degree
 case 'd'
     close all
@@ -71,5 +74,7 @@ case 'ccc'
     cd ..
 case 'q'
     exit
+otherwise
+cd(n)
 end
 end
