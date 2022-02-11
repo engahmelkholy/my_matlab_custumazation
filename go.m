@@ -31,7 +31,8 @@ switch n
         cd 'C:\Users\ahm_e\Documents\MATLAB\WEC-Sim_Applications\Elec_wave'
     case 'p7'
     %cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
-    cd 'C:\Users\ahm_e\Documents\MATLAB\ga-main\gen-p1'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\ga-main\gen-p2'
+    go mtp
     case 'wveg'
     cd 'C:\Users\ahm_e\Documents\MATLAB\wave-energy-egypt'
     p = genpath('source');
