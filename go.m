@@ -5,6 +5,8 @@ function go(n)
     %% go to for current project it will change respectifilly
     %% "p1,wave,wavee,p7,p52,genlag"
     %% go d/ go c, cc, ccc >> clearing options and cd options
+    %% definations of the backages 
+    %% go mtp identify the matpower 
     
 switch n
     case 'o'
@@ -43,6 +45,14 @@ switch n
         addpath(p);
         clear p
     cd 'C:\Users\ahm_e\Documents\MATLAB\ga-main\genlag'
+    case 'gramm'
+        %% gramm is software to plot in proffessional way
+        %%to install it you must go to git hub and search for gramm and then clone it in the matlab toolbox folder
+        %% path to matlab toolbox folder "2021b\toolbox" and then type the command "edit 'pathdef'" and then add it in matlab root 
+        %% adding to matlab root write this command "matlabroot,'\toolbox\gramm;', ..." in the "pathdef.m"
+        %% then to update this toolbox you should change the permission previlage for the gramm file
+    cd 'C:\Program Files\Polyspace\R2021a\toolbox\gramm'
+    
     case 'mtp'
     addpath( ...
     'C:\Users\ahm_e\Documents\MATLAB\matpower\lib', ...
@@ -57,6 +67,7 @@ switch n
     'C:\Users\ahm_e\Documents\MATLAB\matpower\mptest\lib', ...
     'C:\Users\ahm_e\Documents\MATLAB\matpower\mptest\lib\t', ...
     '-end' );
+
 
 
 % delete and quit degree
