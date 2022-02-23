@@ -30,7 +30,23 @@ SetCapsLockState, AlwaysOff                                          ;|
 !p::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep
 ^!p::Run "D:\T\Pl\Microsoft To Do.lnk"
 !a::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
-!c::Run "C:\Program Files\Google\Chrome\Application\chrome.exe" --profile-directory="Default"
+; this is code to open the chrome if it isnot opened and open new tab if the chrome is opened
+!c::
+SetTitleMatchMode, 2
+If WinExist("ahk_exe chrome.exe")
+    {
+    WinActivate, ahk_exe chrome.exe
+    Send ^t
+    }	
+else
+    {
+    Run "C:\Program Files\Google\Chrome\Application\chrome.exe" --profile-directory="Default"
+    ;WinActivate, ahk_exe chrome.exe
+    ;WinWaitActive, ahk_exe chrome.exe
+    ;Send ^l
+    ;Send ^t
+    }
+return
 
 ;hot key
 !l::Run "C:\Program Files (x86)\Mendeley Desktop\MendeleyDesktop.exe"
