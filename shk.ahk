@@ -3,7 +3,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; not used ready to use
 ;CapsLock & b:: Run ""                            ;|
-;CapsLock & n:: Run ""                            ;|
+
 
 ;key to map
 ;=====================================================================o
@@ -17,7 +17,7 @@ SetCapsLockState, AlwaysOff                                          ;|
 ;                      windows key+f = f11     go full screen        ;|
 ;---------------------------------------------------------------------o
 #f:: Send {f11}
-!q::Send #{Tab}                                               ;|
+;!q::Send #{Tab}                                               ;|
 !w:: Send ^#{Left}                                              ;|
 !e::Send ^#{Right}                                              ;| 
 ;=====================================================================o
@@ -27,9 +27,25 @@ SetCapsLockState, AlwaysOff                                          ;|
 !m::Run "C:\Program Files\Wolfram Research\Mathematica\12.2\Mathematica.exe"
 ^!m::Run "C:\Program Files\Polyspace\R2021a\bin\matlab.exe"
 !i::Run "C:\Program Files (x86)\Internet Download Manager\IDMan.exe" 
-!p::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep
 ^!p::Run "D:\T\Pl\Microsoft To Do.lnk"
-!a::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+
+; open Google Calender if itwasnt open if it wasnt open it
+!p::
+if WinExist("Google Calendar")
+    WinActivate ; Use the window found by WinExist.
+else
+Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep
+return
+
+
+; open whatsApp if itwasnt open if it wasnt open it
+!a::
+if WinExist("WhatsApp")
+    WinActivate ; Use the window found by WinExist.
+else
+Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+return
+
 ; this is code to open the chrome if it isnot opened and open new tab if the chrome is opened
 !c::
 SetTitleMatchMode, 2
@@ -50,6 +66,7 @@ return
 
 ;hot key
 !l::Run "C:\Program Files (x86)\Mendeley Desktop\MendeleyDesktop.exe"
+!k::Run "C:\Users\ahm_e\AppData\Local\Obsidian\Obsidian.exe"
 ;^2::Run "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
 ;^3::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=gjoaplgcpnmemdaklplebdapjihcoibe"
 ;^4::Run "C:\Program Files\Nitro\Pro\13\NitroPDF.exe"
@@ -79,23 +96,6 @@ return
  Send, ^c
  Sleep 50
  Run, https://translate.yandex.ru/?utm_source=main_stripe_big&lang=ru-en&text=%clipboard%
- Return
-}
-return
-!k::
-{
- Send, ^c
- Sleep 50
- Run,https://www.google.com/search?q=%clipboard%+rubles+to+usd
- Return
-}
-return
-
-^!k::
-{
- Send, ^c
- Sleep 50
- Run,https://www.google.com/search?q=%clipboard%+rubles+to+egp
  Return
 }
 return
@@ -461,6 +461,7 @@ CapsLock & f::
 }                                      
 CapsLock & r:: Run "C:\Program Files\Git\git-bash.exe"   ;|
 CapsLock & t:: Run "C:\Program Files\Sublime Text\sublime_text.exe"
+;CapsLock & n::   ;|
 ;---------------------------------------------------------------------o
 
 
