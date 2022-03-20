@@ -417,7 +417,17 @@ CapsLock & e:: Send, ^{Right}                                         ;|
 ;               Alt + CapsLock + q  |  Ctrl + Tab (Close Windows)    ;|
 ;                     CapsLock + g  |  AppsKey    (Menu Key)         ;| 
 ;-----------------------------------o---------------------------------o
-CapsLock & s::Send, ^{Tab}                                           ;|
+CapsLock & s::  
+if GetKeyState("alt") = 0                                            ;|
+{                                                                    ;|
+    Send, ^{Tab}                                                         ;|
+}                                                                    ;|
+else {                                                               ;|
+    Send, ^+{Tab}                                                     ;|
+    return                                                           ;|
+}                                                                    ;|
+return                                                               ;|
+;------                                        ;|
 ;-----------------------------------o                                ;|
 CapsLock & q::                                                       ;|
 if GetKeyState("alt") = 0                                            ;|
