@@ -1,4 +1,4 @@
-function go(n)
+    function go(n)
     %% mainaly this function is proposed the cd command 
     %% go o,q >> open, quit the matlab
     %% go home,work,tst,mtp >> go to fixed folder ahk, matlab work dir, go test folder
@@ -33,7 +33,7 @@ switch n
         cd 'C:\Users\ahm_e\Documents\MATLAB\WEC-Sim_Applications\Elec_wave'
     case 'p7'
     %cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
-    cd 'C:\Users\ahm_e\Documents\MATLAB\ga-main\gen-p2'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\P_7_4'
     go mtp
     case 'wveg'
     cd 'C:\Users\ahm_e\Documents\MATLAB\wave-energy-egypt'

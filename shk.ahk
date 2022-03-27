@@ -382,8 +382,13 @@ CapsLock & p:: Send,  {BS}
 CapsLock & z:: Send, ^z                                              ;|
 CapsLock & x:: Send, ^x                                              ;|
 CapsLock & c:: Send, ^c                                              ;|
-CapsLock & v:: Send, ^v                                              ;|
-CapsLock & a:: Send, ^a                                              ;|
+CapsLock & v:: Send, ^v                                              ;|  
+#IfWinActive ahk_exe chrome.exe
+CapsLock & a::Send, ^+{a}  
+#IfWinActive  
+#IfWinNotActive ahk_exe chrome.exe 
+CapsLock & a::Send, ^{a}    
+#IfWinNotActive                                      ;|
 CapsLock & y:: Send, ^y                                              ;|
 CapsLock & w:: Send, ^{Left}                                        ;|
 CapsLock & e:: Send, ^{Right}                                         ;|
