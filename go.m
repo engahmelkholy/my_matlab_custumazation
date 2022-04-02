@@ -33,7 +33,7 @@ switch n
         cd 'C:\Users\ahm_e\Documents\MATLAB\WEC-Sim_Applications\Elec_wave'
     case 'p7'
     %cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
-    cd 'C:\Users\ahm_e\Documents\MATLAB\P_7_4'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\P_7_4\unbalanced_load_flow'
     go mtp
     case 'wveg'
     cd 'C:\Users\ahm_e\Documents\MATLAB\wave-energy-egypt'
@@ -67,9 +67,6 @@ switch n
     'C:\Users\ahm_e\Documents\MATLAB\matpower\mptest\lib', ...
     'C:\Users\ahm_e\Documents\MATLAB\matpower\mptest\lib\t', ...
     '-end' );
-
-
-
 % delete and quit degree
 case 'd'
     close all
