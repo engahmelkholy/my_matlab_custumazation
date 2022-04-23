@@ -83,7 +83,7 @@ case 'ccc'
     cd ..
 case 'q'
     exit
-case 'bsh'
+case 'bash'
     system('C:\Program Files\Git\git-bash.exe','-echo');
 otherwise
 cd(n)
