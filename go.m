@@ -33,7 +33,7 @@ switch n
         cd 'C:\Users\ahm_e\Documents\MATLAB\WEC-Sim_Applications\Elec_wave'
     case 'p7'
     %cd 'C:\Users\ahm_e\Documents\MATLAB\SVC-AUTO'
-    cd 'C:\Users\ahm_e\Documents\MATLAB\P_7_4\unbalanced_load_flow'
+    cd 'C:\Users\ahm_e\Documents\MATLAB\P_7_4\rel_los_qu_unb'
     go mtp
     case 'wveg'
     cd 'C:\Users\ahm_e\Documents\MATLAB\wave-energy-egypt'
@@ -83,6 +83,8 @@ case 'ccc'
     cd ..
 case 'q'
     exit
+case 'bsh'
+    system('C:\Program Files\Git\git-bash.exe','-echo');
 otherwise
 cd(n)
 end
