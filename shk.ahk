@@ -17,6 +17,7 @@ SetCapsLockState, AlwaysOff                                          ;|
 ;                      windows key+f = f11     go full screen        ;|
 ;---------------------------------------------------------------------o
 #f:: Send {f11}
+#\:: Run "D:\software\proxy\psiphon3.exe"
 ;!q::Send #{Tab}                                               ;|
 !w:: Send ^#{Left}                                              ;|
 !e::Send ^#{Right}                                              ;| 
@@ -656,3 +657,9 @@ return
     Return
 
 #IfWinActive
+; hot strings
+:*:@@:: ahmed_elkholy@f-eng.tanta.edu.eg
+:*:]d::  ; This hotstring replaces "]d" with the current date and time via the commands below.
+FormatTime, CurrentDateTime,, d-M-yy-HH-mm  ; It will look like 9/1/2005 3:53 PM
+SendInput %CurrentDateTime%
+return
