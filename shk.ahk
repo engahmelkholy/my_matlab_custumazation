@@ -26,7 +26,7 @@ SetCapsLockState, AlwaysOff                                          ;|
 !o::Run "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"
 !t::Run "D:\T" ;
 !m::Run "C:\Program Files\Wolfram Research\Mathematica\12.2\Mathematica.exe"
-^!m::Run "C:\Program Files\Polyspace\R2021a\bin\matlab.exe"
+^!m::Run "C:\Program Files\MATLAB\R2022a\bin\matlab.exe"
 !i::Run "C:\Program Files (x86)\Internet Download Manager\IDMan.exe" 
 ^!p::Run "D:\T\Pl\Microsoft To Do.lnk"
 
@@ -540,44 +540,7 @@ CapsLock & 9:: Send,+9                                               ;|
 CapsLock & 0:: Send,+0                                               ;|
 ;---------------------------------------------------------------------o
 
-; This autocompletes (), [], "", '',
 
-;Menu, Tray, Icon, expanded_icon.ico, 1, 1
-
-:*?:(::
-SendInput, {Raw}()
-SendInput, {Left 1} 
-return
-
-:*:'::
-SendInput, {Raw}''
-SendInput, {Left 1}
-return
-
-; Bonus :D
-
-:*:sout::
-SendInput, System.out.println();{Left 2} 
-return
-
-:*?:{::
-SendInput, {Raw}{}
-SendInput, {Left 1}
-return
-
-:*?:[::
-SendInput, {Raw}[]
-SendInput, {Left 1}
-return
-
-:*:<::
-SendInput, {Raw}<>
-SendInput, {Left 1}
-return
-
-:*:"::
-SendInput, ""{Left 1}  
-return
 
 ; This is part of my AutoHotKey [1] script. When you are in Windows Explorer it
 ; allows you to press Alt+N and type a filename, and that file is created
@@ -657,9 +620,51 @@ return
     Return
 
 #IfWinActive
-; hot strings
+;; hot strings
 :*:@@:: ahmed_elkholy@f-eng.tanta.edu.eg
-:*:]d::  ; This hotstring replaces "]d" with the current date and time via the commands below.
+:*:]de:: define 
+:*:std:: standard
+:*:]da::  ; This hotstring replaces "]d" with the current date and time via the commands below.
 FormatTime, CurrentDateTime,, d-M-yy-HH-mm  ; It will look like 9/1/2005 3:53 PM
 SendInput %CurrentDateTime%
+return
+;; in word insert equation in text
+:*:$$:: 
+If WinExist("ahk_exe winword.exe")
+{
+    If WinActive("ahk_exe winword.exe")
+       Send, != ; sent alt+=
+    else
+    Send, $$ 
+    return
+}
+; This autocompletes (), [], "", '',
+:*?:(::
+SendInput, {Raw}()
+SendInput, {Left 1} 
+return
+
+:*:'::
+SendInput, {Raw}''
+SendInput, {Left 1}
+return
+
+; Bonus :D
+:*?:{::
+SendInput, {Raw}{}
+SendInput, {Left 1}
+return
+
+:*?:[::
+SendInput, {Raw}[]
+SendInput, {Left 1}
+return
+
+:*:<::
+SendInput, {Raw}<>
+SendInput, {Left 1}
+return
+
+:*:"::
+SendInput, ""{Left 1}  
 return
