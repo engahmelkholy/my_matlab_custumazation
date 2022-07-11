@@ -29,6 +29,7 @@ SetCapsLockState, AlwaysOff                                          ;|
 ^!m::Run "C:\Program Files\MATLAB\R2022a\bin\matlab.exe"
 !i::Run "C:\Program Files (x86)\Internet Download Manager\IDMan.exe" 
 ^!p::Run "D:\T\Pl\Microsoft To Do.lnk"
+!h::Run "C:\Program Files\PotPlayer\PotPlayerMini64.exe"
 
 ; open Google Calender if itwasnt open if it wasnt open it
 !p::
@@ -426,10 +427,10 @@ CapsLock & e:: Send, ^{Right}                                         ;|
 CapsLock & s::  
 if GetKeyState("alt") = 0                                            ;|
 {                                                                    ;|
-    Send, ^{Tab}                                                         ;|
+    Send, ^+{Tab}                                                        ;|
 }                                                                    ;|
 else {                                                               ;|
-    Send, ^+{Tab}                                                     ;|
+    Send, ^{Tab}                                                     ;|
     return                                                           ;|
 }                                                                    ;|
 return                                                               ;|
@@ -461,11 +462,20 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & d:: 
 {
-SendInput {End}
-SendInput +{Home}
-SendInput ^+{Left}
-SendInput {Delete}
-return
+if GetKeyState("alt") = 0                                            ;|
+{                                                                    ;|
+	SendInput {End}
+	SendInput +{Home}
+	SendInput ^+{Left}
+	SendInput {Delete}
+	return                                                        ;|
+}                                                                    ;|
+else {                                                               ;|
+	SendInput {End}
+	SendInput +{Home}
+	return                                                          ;|
+}                                                                    ;|
+
 } 
                                                                      ;|
 CapsLock & f::
@@ -622,8 +632,8 @@ CapsLock & 0:: Send,+0                                               ;|
 #IfWinActive
 ;; hot strings
 :*:@@:: ahmed_elkholy@f-eng.tanta.edu.eg
-:*:]de:: define 
-:*:std:: standard
+:*:]de::define 
+:*:std::standard
 :*:]da::  ; This hotstring replaces "]d" with the current date and time via the commands below.
 FormatTime, CurrentDateTime,, d-M-yy-HH-mm  ; It will look like 9/1/2005 3:53 PM
 SendInput %CurrentDateTime%
@@ -637,6 +647,65 @@ If WinExist("ahk_exe winword.exe")
     else
     Send, $$ 
     return
+}
+::fig:: 
+If WinExist("ahk_exe winword.exe")
+{
+    If WinActive("ahk_exe winword.exe")
+{	Send, !{5} 
+       	Send, fi
+	Send, {Enter} ;
+	Send, {tab}
+}
+    else
+    	Send, fig 
+    return
+}
+::tab:: 
+If WinExist("ahk_exe winword.exe")
+{
+    If WinActive("ahk_exe winword.exe")
+{	Send, !{5} ; sent alt+=
+       	Send, t
+	Send, {Enter} ;
+	Send, {tab}
+}
+    else
+    	Send, tab
+    return
+}
+::equ:: 
+If WinExist("ahk_exe winword.exe")
+{
+    If WinActive("ahk_exe winword.exe")
+{	Send, !{5} ; sent alt+=
+       	Send, eq
+	Send, {Enter} ;
+	Send, {tab}
+}
+    else
+    	Send, equation
+    return
+}
+:*:]c:: 
+If WinExist("ahk_exe Mathematica.exe")
+{
+    If WinActive("ahk_exe Mathematica.exe")
+ 	SendInput, Exit[]
+	Send, +{Enter}
+	SendInput, {Left 1}
+	SendInput {End}
+	SendInput +{Home}
+	SendInput ^+{Left}
+	SendInput {Delete}
+ 	SendInput, 1+1
+	Send, +{Enter}
+	SendInput, {Left 1}
+	SendInput {End}
+	SendInput +{Home}
+	SendInput ^+{Left}
+	SendInput {Delete}
+	return
 }
 ; This autocompletes (), [], "", '',
 :*?:(::

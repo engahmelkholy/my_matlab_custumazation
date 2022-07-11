@@ -86,6 +86,6 @@ function go(n)
     case 'bash'
         system('C:\Program Files\Git\git-bash.exe','-echo');
     otherwise
-    cd(n)
+        cd(n)
     end
 end
