@@ -24,7 +24,7 @@ SetCapsLockState, AlwaysOff                                          ;|
 ;=====================================================================o
 ; folder to oen
 !o::Run "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"
-!t::Run "D:\T" ;
+
 !m::Run "C:\Program Files\Wolfram Research\Mathematica\12.2\Mathematica.exe"
 ^!m::Run "C:\Program Files\MATLAB\R2022a\bin\matlab.exe"
 !i::Run "C:\Program Files (x86)\Internet Download Manager\IDMan.exe" 
@@ -68,7 +68,6 @@ return
 
 ;hot key
 !l::Run "C:\Program Files (x86)\Mendeley Desktop\MendeleyDesktop.exe"
-!k::Run "C:\Users\ahm_e\AppData\Local\Obsidian\Obsidian.exe"
 ;^2::Run "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
 ;^3::Run "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=gjoaplgcpnmemdaklplebdapjihcoibe"
 ;^4::Run "C:\Program Files\Nitro\Pro\13\NitroPDF.exe"
@@ -486,7 +485,18 @@ CapsLock & f::
  Return
 }                                      
 CapsLock & r:: Run "C:\Program Files\Git\git-bash.exe"   ;|
-CapsLock & t:: Run "C:\Program Files\Sublime Text\sublime_text.exe"
+CapsLock & t::
+{
+if GetKeyState("alt") = 0                                            ;|
+{                                                                    ;|
+	Run "C:\Program Files\Sublime Text\sublime_text.exe"	                                                     ;|
+}                                                                    ;|
+else {                                                               ;|
+	Run "C:\Users\ahm_e\AppData\Local\Obsidian\Obsidian.exe"                                                        ;|
+}                                                                    ;|
+
+} 
+ 
 ;CapsLock & n::   ;|
 ;---------------------------------------------------------------------o
 
@@ -496,8 +506,8 @@ CapsLock & t:: Run "C:\Program Files\Sublime Text\sublime_text.exe"
 ;-----------------------------------o---------------------------------o
 ;                     CapsLock + ;  |  Enter (Cancel)                ;|
 ;                     CapsLock + '  |  =                             ;|
-;                     CapsLock + [  |  Back         (Visual Studio)  ;|
-;                     CapsLock + ]  |  Goto Define  (Visual Studio)  ;|
+;                     CapsLock + [  | zoom in   ;|
+;                     CapsLock + ]  |  zoom out  ;|
 ;                     CapsLock + 1  |  Build and Run(Visual Studio)  ;|
 ;                     CapsLock + 2  |  Debuging     (Visual Studio)  ;|
 ;                     CapsLock + 3  |  Step Over    (Visual Studio)  ;|
@@ -511,8 +521,8 @@ CapsLock & t:: Run "C:\Program Files\Sublime Text\sublime_text.exe"
 ;-----------------------------------o---------------------------------o
 CapsLock & `;:: Send, {Enter}                                        ;|
 CapsLock & ':: Send, =                                               ;|
-CapsLock & [:: Send, ^-                                              ;|
-CapsLock & ]:: Send, {F12}                                           ;|
+CapsLock & [:: Send, ^{-}                                              ;|
+CapsLock & ]:: Send, ^{=}                                         ;|
 ;-----------------------------------o                                ;|
 ;-----------------------------------o                                ;|
 CapsLock & 1::										; CapsLock & 1
@@ -538,10 +548,10 @@ ifWinActive, Sublime 							; if active window is Sublime Text
 		;Send {F5} 								; "press" F5 to run the m-file 
 	}
 }                                                                    ;|
-CapsLock & 2:: Send,{F5}                                             ;|
-CapsLock & 3:: Send,{F10}                                            ;|
-CapsLock & 4:: Send,{F11}                                            ;|
-CapsLock & 5:: Send,+{F5}                                            ;|
+CapsLock & 2:: Send,+2                                              ;|
+CapsLock & 3:: Send,+3                                            ;|
+CapsLock & 4:: Send,+4                                            ;|
+CapsLock & 5:: Send,+5                                            ;|
 ;-----------------------------------o                                ;|
 CapsLock & 6:: Send,+6                                               ;|
 CapsLock & 7:: Send,+7                                               ;|
@@ -549,6 +559,7 @@ CapsLock & 8:: Send,+8                                               ;|
 CapsLock & 9:: Send,+9                                               ;|
 CapsLock & 0:: Send,+0                                               ;|
 ;---------------------------------------------------------------------o
+
 
 
 
@@ -635,7 +646,7 @@ CapsLock & 0:: Send,+0                                               ;|
 :*:]de::define 
 :*:std::standard
 :*:]da::  ; This hotstring replaces "]d" with the current date and time via the commands below.
-FormatTime, CurrentDateTime,, d-M-yy-HH-mm  ; It will look like 9/1/2005 3:53 PM
+FormatTime, CurrentDateTime,, dd.MM.yy-HH:mm  ; It will look like 9/1/2005 3:53 PM
 SendInput %CurrentDateTime%
 return
 ;; in word insert equation in text
@@ -687,7 +698,7 @@ If WinExist("ahk_exe winword.exe")
     	Send, equation
     return
 }
-:*:]c:: 
+:*:]cl:: 
 If WinExist("ahk_exe Mathematica.exe")
 {
     If WinActive("ahk_exe Mathematica.exe")
