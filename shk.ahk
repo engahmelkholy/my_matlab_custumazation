@@ -489,10 +489,12 @@ CapsLock & t::
 {
 if GetKeyState("alt") = 0                                            ;|
 {                                                                    ;|
-	Run "C:\Program Files\Sublime Text\sublime_text.exe"	                                                     ;|
+	Run "C:\Program Files\Sublime Text\sublime_text.exe"
+	Return
 }                                                                    ;|
 else {                                                               ;|
-	Run "C:\Users\ahm_e\AppData\Local\Obsidian\Obsidian.exe"                                                        ;|
+	Run "C:\Users\ahm_e\AppData\Local\Obsidian\Obsidian.exe"  
+	Return                                                      ;|
 }                                                                    ;|
 
 } 
@@ -642,9 +644,16 @@ CapsLock & 0:: Send,+0                                               ;|
 
 #IfWinActive
 ;; hot strings
+::fr::
+{ 
+SendInput, {Raw}\frac{}{}
+SendInput, {Left 1}
+SendInput, {Left 1}
+SendInput, {Left 1}
+Return
+}
 :*:@@:: ahmed_elkholy@f-eng.tanta.edu.eg
 :*:]de::define 
-:*:std::standard
 :*:]da::  ; This hotstring replaces "]d" with the current date and time via the commands below.
 FormatTime, CurrentDateTime,, dd.MM.yy-HH:mm  ; It will look like 9/1/2005 3:53 PM
 SendInput %CurrentDateTime%

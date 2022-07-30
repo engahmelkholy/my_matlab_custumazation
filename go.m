@@ -14,7 +14,7 @@ function go(n)
         case 'work'
             cd 'C:\Users\ahm_e\Documents\MATLAB'
         case 'home'
-        cd 'D:\OneDrive - Fculty Of Engineering (Tanta University)\General_software\scripts\AHK'
+        cd 'D:\OneDrive - Faculty Of Engineering (Tanta University)\General_software\scripts\AHK'
         case 'tst'
         cd 'C:\Users\ahm_e\Documents\MATLAB\Test'
         case 'p1'
